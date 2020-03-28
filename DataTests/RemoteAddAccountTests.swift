@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Domain
 
 class RemoteAddAccount {
     private let url:URL
@@ -17,13 +18,14 @@ class RemoteAddAccount {
         self.httpClient = httpClient
     }
     
-    func add() {
-        httpClient.post(url: self.url)
+    func add(addAccountModel:AddAccountModel) {
+        let data = try? JSONEncoder().encode(addAccountModel)
+        httpClient.post(to: self.url,with: data)
     }
 }
 
 protocol HttpPostClient {
-    func post(url:URL)
+    func post(to url:URL, with:Data?)
 }
 
 class RemoteAddAccountTests: XCTestCase {
@@ -32,19 +34,36 @@ class RemoteAddAccountTests: XCTestCase {
         let url = URL(string: "http://any-url.com")!
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
-        sut.add()
+        sut.add(addAccountModel: getSUT())
         XCTAssertEqual(httpClientSpy.url, url)
     }
     
-    
+    func test_add_should_call_httpClient_with_correct_data() {
+        let url = URL(string: "http://any-url.com")!
+        let httpClientSpy = HttpClientSpy()
+        let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
+        let addAccountModel = getSUT()
+        sut.add(addAccountModel: addAccountModel)
+        let data = try? JSONEncoder().encode(addAccountModel)
+        XCTAssertEqual(httpClientSpy.data, data)
+    }
 }
 
 extension RemoteAddAccountTests {
     class HttpClientSpy: HttpPostClient {
         var url:URL?
+        var data:Data?
         
-        func post(url: URL) {
+        func post(to url: URL, with data:Data?) {
             self.url = url
+            self.data = data
         }
+    }
+    
+    fileprivate func getSUT(name:String = "any name"
+                          , email:String = "any email"
+                          , password:String = "any password"
+                          , passwordConfirmation:String = "any password") -> AddAccountModel {
+        return AddAccountModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
     }
 }
