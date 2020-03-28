@@ -34,7 +34,7 @@ class RemoteAddAccountTests: XCTestCase {
         let url = URL(string: "http://any-url.com")!
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
-        sut.add(addAccountModel: getSUT())
+        sut.add(addAccountModel: makeAddAccountModel())
         XCTAssertEqual(httpClientSpy.url, url)
     }
     
@@ -42,7 +42,7 @@ class RemoteAddAccountTests: XCTestCase {
         let url = URL(string: "http://any-url.com")!
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
-        let addAccountModel = getSUT()
+        let addAccountModel = makeAddAccountModel()
         sut.add(addAccountModel: addAccountModel)
         let data = try? JSONEncoder().encode(addAccountModel)
         XCTAssertEqual(httpClientSpy.data, data)
@@ -60,7 +60,7 @@ extension RemoteAddAccountTests {
         }
     }
     
-    fileprivate func getSUT(name:String = "any name"
+    fileprivate func makeAddAccountModel(name:String = "any name"
                           , email:String = "any email"
                           , password:String = "any password"
                           , passwordConfirmation:String = "any password") -> AddAccountModel {
