@@ -18,6 +18,7 @@
 		8E88C17424301C0E008C2908 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C17324301C0E008C2908 /* RemoteAddAccount.swift */; };
 		8E93833B243233080003803D /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833A243233080003803D /* DomainError.swift */; };
 		8E93833D243238710003803D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833C243238710003803D /* HttpError.swift */; };
+		8E938340243265140003803D /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833F243265140003803D /* ExtensionHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		8E88C17324301C0E008C2908 /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		8E93833A243233080003803D /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		8E93833C243238710003803D /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		8E93833F243265140003803D /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		8E88C151242FC7EF008C2908 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8E93833E243264F20003803D /* Helpers */,
 				8E88C17724301D39008C2908 /* useCases */,
 				8E88C17824301D42008C2908 /* http */,
 				8E88C153242FC7EF008C2908 /* Info.plist */,
@@ -201,6 +204,14 @@
 				8E93833A243233080003803D /* DomainError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		8E93833E243264F20003803D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E93833F243265140003803D /* ExtensionHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E88C17224301BEB008C2908 /* HttpPostClient.swift in Sources */,
+				8E938340243265140003803D /* ExtensionHelpers.swift in Sources */,
 				8E93833D243238710003803D /* HttpError.swift in Sources */,
 				8E88C17424301C0E008C2908 /* RemoteAddAccount.swift in Sources */,
 			);

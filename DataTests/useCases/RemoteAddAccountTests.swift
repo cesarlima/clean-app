@@ -36,13 +36,34 @@ class RemoteAddAccountTests: XCTestCase {
         sut.add(addAccountModel: addAccountModel) { result in
             switch result {
                 case .failure(let error): XCTAssertEqual(error, .unexpected)
-                case .success: XCTFail("Expected error receive \(result) instead")
+                case .success: XCTFail("Expected error received \(result) instead")
             }
             
             exp.fulfill()
         }
         
         httpClientSpy.completionWithError(.noConnectivity)
+        
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_add_should_complete_with_account_if_client_complete_with_data() {
+        let (httpClientSpy, sut) = makeSUT()
+        let addAccountModel = makeAddAccountModel()
+        let expectedData = makeAccountModel()
+        
+        let exp = expectation(description: "waiting")
+        
+        sut.add(addAccountModel: addAccountModel) { result in
+            switch result {
+                case .failure: XCTFail("Expected succes received \(result) instead")
+                case .success(let receivedData): XCTAssertEqual(receivedData, expectedData)
+            }
+            
+            exp.fulfill()
+        }
+        
+        httpClientSpy.completionWithData(expectedData.toData()!)
         
         wait(for: [exp], timeout: 1)
     }
@@ -63,6 +84,10 @@ extension RemoteAddAccountTests {
         func completionWithError(_ error:HttpError) {
             self.completion?(.failure(error))
         }
+        
+        func completionWithData(_ data:Data) {
+            self.completion?(.success(data))
+        }
     }
     
     fileprivate func makeSUT(url:URL = URL(string: "http://any-url.com")!) -> (HttpClientSpy, RemoteAddAccount) {
@@ -72,9 +97,16 @@ extension RemoteAddAccountTests {
     }
     
     fileprivate func makeAddAccountModel(name:String = "any name"
-                          , email:String = "any email"
-                          , password:String = "any password"
-                          , passwordConfirmation:String = "any password") -> AddAccountModel {
+                                       , email:String = "any email"
+                                       , password:String = "any password"
+                                       , passwordConfirmation:String = "any password") -> AddAccountModel {
         return AddAccountModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
+    }
+    
+    fileprivate func makeAccountModel(id:String = "any id"
+                                    , name:String = "any name"
+                                    , email:String = "any email"
+                                    , password:String = "any password") -> AccountModel {
+        return AccountModel(id: id, name: name, email: email, password: password)
     }
 }
