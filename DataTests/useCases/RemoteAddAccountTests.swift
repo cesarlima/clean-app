@@ -33,8 +33,12 @@ class RemoteAddAccountTests: XCTestCase {
         
         let exp = expectation(description: "waiting")
         
-        sut.add(addAccountModel: addAccountModel) { error in
-            XCTAssertEqual(error, .unexpected)
+        sut.add(addAccountModel: addAccountModel) { result in
+            switch result {
+                case .failure(let error): XCTAssertEqual(error, .unexpected)
+                case .success: XCTFail("Expected error receive \(result) instead")
+            }
+            
             exp.fulfill()
         }
         
@@ -48,16 +52,16 @@ extension RemoteAddAccountTests {
     class HttpClientSpy: HttpPostClient {
         var urls = [URL]()
         var data:Data?
-        var completion:((HttpError) -> Void)?
+        var completion:((Result<Data?, HttpError>) -> Void)?
         
-        func post(to url: URL, with data:Data?, completion: @escaping (HttpError) -> Void) {
+        func post(to url: URL, with data:Data?, completion: @escaping (Result<Data?, HttpError>) -> Void) {
             self.urls.append(url)
             self.data = data
             self.completion = completion
         }
         
         func completionWithError(_ error:HttpError) {
-            self.completion?(error)
+            self.completion?(.failure(error))
         }
     }
     
