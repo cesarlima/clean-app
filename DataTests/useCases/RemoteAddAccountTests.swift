@@ -71,6 +71,12 @@ extension RemoteAddAccountTests {
         }
     }
     
+    fileprivate func checkMemoryLeak(for instance: AnyObject, file:StaticString = #file, line:UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, file: file, line: line)
+        }
+    }
+    
     fileprivate func expect(_ sut:RemoteAddAccount, completeWith expectedResult:Result<AccountModel, DomainError>, when action:@escaping() -> Void,
                             file:StaticString = #file, line:UInt = #line) {
         let exp = expectation(description: "waiting")
@@ -90,9 +96,11 @@ extension RemoteAddAccountTests {
         wait(for: [exp], timeout: 1)
     }
     
-    fileprivate func makeSUT(url:URL = URL(string: "http://any-url.com")!) -> (HttpClientSpy, RemoteAddAccount) {
+    fileprivate func makeSUT(url:URL = URL(string: "http://any-url.com")!, file:StaticString = #file, line:UInt = #line) -> (HttpClientSpy, RemoteAddAccount) {
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
+        checkMemoryLeak(for: httpClientSpy, file: file, line: line)
+        checkMemoryLeak(for: sut, file: file, line: line)
         return (httpClientSpy, sut)
     }
     
