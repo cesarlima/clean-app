@@ -13,7 +13,7 @@ import Data
 class RemoteAddAccountTests: XCTestCase {
     
     func test_add_should_call_httpClient_with_correct_url_one_time() {
-        let url = URL(string: "http://any-url.com")!
+        let url = makeURL()
         let (httpClientSpy, sut) = makeSUT(url: url)
         sut.add(addAccountModel: makeAddAccountModel()) { _ in}
         XCTAssertEqual(httpClientSpy.urls, [url])
@@ -37,7 +37,7 @@ class RemoteAddAccountTests: XCTestCase {
     func test_add_should_complete_with_account_if_client_complete_with_ivalid_data() {
         let (httpClientSpy, sut) = makeSUT()
         expect(sut, completeWith: .failure(.unexpected), when: {
-            httpClientSpy.completionWithData(Data("invalid data".utf8))
+            httpClientSpy.completionWithData(makeInvalidData())
         })
     }
     
@@ -62,32 +62,6 @@ class RemoteAddAccountTests: XCTestCase {
 }
 
 extension RemoteAddAccountTests {
-    class HttpClientSpy: HttpPostClient {
-        var urls = [URL]()
-        var data:Data?
-        var completion:((Result<Data?, HttpError>) -> Void)?
-        
-        func post(to url: URL, with data:Data?, completion: @escaping (Result<Data?, HttpError>) -> Void) {
-            self.urls.append(url)
-            self.data = data
-            self.completion = completion
-        }
-        
-        func completionWithError(_ error:HttpError) {
-            self.completion?(.failure(error))
-        }
-        
-        func completionWithData(_ data:Data) {
-            self.completion?(.success(data))
-        }
-    }
-    
-    fileprivate func checkMemoryLeak(for instance: AnyObject, file:StaticString = #file, line:UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
-    }
-    
     fileprivate func expect(_ sut:RemoteAddAccount, completeWith expectedResult:Result<AccountModel, DomainError>, when action:@escaping() -> Void,
                             file:StaticString = #file, line:UInt = #line) {
         let exp = expectation(description: "waiting")
@@ -107,10 +81,6 @@ extension RemoteAddAccountTests {
         wait(for: [exp], timeout: 1)
     }
     
-    fileprivate func makeURL() -> URL {
-        return  URL(string: "http://any-url.com")!
-    }
-    
     fileprivate func makeSUT(url:URL = URL(string: "http://any-url.com")!, file:StaticString = #file, line:UInt = #line) -> (HttpClientSpy, RemoteAddAccount) {
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
@@ -124,12 +94,5 @@ extension RemoteAddAccountTests {
                                        , password:String = "any password"
                                        , passwordConfirmation:String = "any password") -> AddAccountModel {
         return AddAccountModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
-    }
-    
-    fileprivate func makeAccountModel(id:String = "any id"
-                                    , name:String = "any name"
-                                    , email:String = "any email"
-                                    , password:String = "any password") -> AccountModel {
-        return AccountModel(id: id, name: name, email: email, password: password)
     }
 }

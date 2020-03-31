@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E18A79A2433FA460050749E /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A7992433FA460050749E /* TestExtension.swift */; };
+		8E18A79C2433FACE0050749E /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A79B2433FACE0050749E /* TestFactories.swift */; };
+		8E18A79F2433FBAC0050749E /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A79E2433FBAC0050749E /* HttpClientSpy.swift */; };
+		8E18A7A12433FC3D0050749E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A7A02433FC3D0050749E /* AccountModelFactory.swift */; };
 		8E88C148242FC652008C2908 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C147242FC652008C2908 /* AddAccount.swift */; };
 		8E88C14A242FC755008C2908 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C149242FC755008C2908 /* AccountModel.swift */; };
 		8E88C159242FC7EF008C2908 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88C150242FC7EF008C2908 /* Data.framework */; };
@@ -53,6 +57,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8E18A7992433FA460050749E /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
+		8E18A79B2433FACE0050749E /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		8E18A79E2433FBAC0050749E /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
+		8E18A7A02433FC3D0050749E /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 		8E88C13F242FC502008C2908 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88C142242FC502008C2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E88C147242FC652008C2908 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -97,6 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E18A7982433FA290050749E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E18A7992433FA460050749E /* TestExtension.swift */,
+				8E18A79B2433FACE0050749E /* TestFactories.swift */,
+				8E18A7A02433FC3D0050749E /* AccountModelFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8E18A79D2433FB900050749E /* http */ = {
+			isa = PBXGroup;
+			children = (
+				8E18A79E2433FBAC0050749E /* HttpClientSpy.swift */,
+			);
+			path = http;
+			sourceTree = "<group>";
+		};
 		8E88C125242FC434008C2908 = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +169,9 @@
 		8E88C15C242FC7EF008C2908 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E18A7982433FA290050749E /* Helpers */,
 				8E88C17924301D63008C2908 /* useCases */,
+				8E18A79D2433FB900050749E /* http */,
 				8E88C15F242FC7EF008C2908 /* Info.plist */,
 			);
 			path = DataTests;
@@ -384,7 +412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E18A79C2433FACE0050749E /* TestFactories.swift in Sources */,
+				8E18A79F2433FBAC0050749E /* HttpClientSpy.swift in Sources */,
 				8E88C15E242FC7EF008C2908 /* RemoteAddAccountTests.swift in Sources */,
+				8E18A7A12433FC3D0050749E /* AccountModelFactory.swift in Sources */,
+				8E18A79A2433FA460050749E /* TestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
