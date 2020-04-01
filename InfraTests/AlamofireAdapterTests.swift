@@ -75,13 +75,12 @@ extension AlamofireAdapterTests {
     
     fileprivate func testRequestFor(url:URL = makeURL(), data:Data?, action:@escaping (URLRequest) -> Void) {
         let sut = makeSUT()
-        sut.post(to: url, with: data) { _ in }
         let exp = expectation(description: "waiting")
-        UrlProtocolStub.oberveRequest { (request) in
-            action(request)
-            exp.fulfill()
-        }
+        sut.post(to: url, with: data) { _ in exp.fulfill() }
+        var request:URLRequest?
+        UrlProtocolStub.oberveRequest { request = $0 }
         wait(for: [exp], timeout: 1)
+        action(request!)
     }
 }
 
