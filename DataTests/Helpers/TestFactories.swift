@@ -12,6 +12,10 @@ func makeURL() -> URL {
     return  URL(string: "http://any-url.com")!
 }
 
+func makeEmptyData() -> Data {
+    return Data()
+}
+
 func makeValidData() -> Data {
     return Data("{\"name\":\"any name\"}".utf8)
 }
