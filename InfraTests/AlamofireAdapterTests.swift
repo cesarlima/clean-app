@@ -10,42 +10,7 @@ import XCTest
 import Alamofire
 import Data
 import Domain
-
-class AlamofireAdapter {
-    private let session:Session
-    
-    init(session:Session = .default) {
-        self.session = session
-    }
-    
-    func post(to url: URL, with data:Data?, completion: @escaping(Result<Data?, HttpError>) -> Void) {
-        let json = data?.toJson()
-        self.session.request(url, method: .post, parameters: json, encoding: JSONEncoding.default).responseData { (responseData) in
-            guard let statusCode = responseData.response?.statusCode else { return completion(.failure(.noConnectivity)) }
-            switch responseData.result {
-                case .success(let data):
-                    switch statusCode {
-                        case 204:
-                             completion(.success(nil))
-                        case 200...299:
-                            completion(.success(data))
-                        case 401:
-                            completion(.failure(.unauthorized))
-                        case 403:
-                            completion(.failure(.forbidden))
-                        case 400...499:
-                            completion(.failure(.badRequest))
-                        case 500...599:
-                            completion(.failure(.serverError))
-                        default:
-                            completion(.failure(.noConnectivity))
-                    }
-                    
-                case .failure: completion(.failure(.noConnectivity))
-            }
-        }
-    }
-}
+import Infra
 
 class AlamofireAdapterTests: XCTestCase {
 
