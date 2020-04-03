@@ -28,6 +28,7 @@
 		8E18A7FF2437B5AD0050749E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88C13F242FC502008C2908 /* Domain.framework */; };
 		8E18A8002437B5AD0050749E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88C13F242FC502008C2908 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E18A8062437B6480050749E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A8052437B6480050749E /* AlertView.swift */; };
+		8E18A80B2437BC250050749E /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A80A2437BC250050749E /* EmailValidator.swift */; };
 		8E88C148242FC652008C2908 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C147242FC652008C2908 /* AddAccount.swift */; };
 		8E88C14A242FC755008C2908 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C149242FC755008C2908 /* AccountModel.swift */; };
 		8E88C159242FC7EF008C2908 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88C150242FC7EF008C2908 /* Data.framework */; };
@@ -166,6 +167,7 @@
 		8E18A7F5243779250050749E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E18A7FD2437B58B0050749E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		8E18A8052437B6480050749E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		8E18A80A2437BC250050749E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		8E88C13F242FC502008C2908 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88C142242FC502008C2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E88C147242FC652008C2908 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		8E18A7E7243779250050749E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8E18A8092437BC110050749E /* Validators */,
 				8E18A8042437B6370050749E /* Views */,
 				8E18A8072437B6B60050749E /* Presenters */,
 				8E18A7E9243779250050749E /* Info.plist */,
@@ -354,6 +357,14 @@
 				8E18A7F3243779250050749E /* SignUpPresenterTests.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8E18A8092437BC110050749E /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				8E18A80A2437BC250050749E /* EmailValidator.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		8E88C125242FC434008C2908 = {
@@ -835,6 +846,7 @@
 			files = (
 				8E18A7FE2437B58B0050749E /* SignUpPresenter.swift in Sources */,
 				8E18A8062437B6480050749E /* AlertView.swift in Sources */,
+				8E18A80B2437BC250050749E /* EmailValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
