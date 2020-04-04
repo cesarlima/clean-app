@@ -8,6 +8,7 @@
 
 import XCTest
 import Presentation
+import Domain
 
 class SignUpPresenterTests: XCTestCase {
     
@@ -62,6 +63,13 @@ class SignUpPresenterTests: XCTestCase {
         sut.signUp(viewModel:makeSignUpViewModel())
         XCTAssertEqual(alertViewSpy.viewModel, makeInvalidAlertViewModel(fieldName: "Email"))
     }
+    
+    func test_signUP_should_call_addAccount_with_correct_values() {
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSUT(addAccount:addAccountSpy)
+        sut.signUp(viewModel:makeSignUpViewModel())
+        XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
+    }
 }
 
 extension SignUpPresenterTests {
@@ -86,7 +94,15 @@ extension SignUpPresenterTests {
         }
     }
     
-    func makeSignUpViewModel(name:String? = "any-name", email:String? = "any@email", password:String? = "any-password", passwordConfirmation:String? = "any-password") -> SignUpViewModel {
+    class AddAccountSpy: AddAccount {
+        var addAccountModel: AddAccountModel?
+        
+        func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+            self.addAccountModel = addAccountModel
+        }
+    }
+    
+    func makeSignUpViewModel(name:String? = "any_name", email:String? = "any@email.com", password:String? = "any_password", passwordConfirmation:String? = "any_password") -> SignUpViewModel {
         return SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
     }
     
@@ -98,8 +114,10 @@ extension SignUpPresenterTests {
         return AlertViewModel(title:"Falha na validação", message:"O campo \(fieldName) é inválido")
     }
     
-    func makeSUT(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter {
-        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+    func makeSUT(alertView: AlertViewSpy = AlertViewSpy()
+               , emailValidator: EmailValidatorSpy = EmailValidatorSpy()
+        , addAccount:AddAccountSpy = AddAccountSpy()) -> SignUpPresenter {
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount:addAccount)
         return sut
     }
 }

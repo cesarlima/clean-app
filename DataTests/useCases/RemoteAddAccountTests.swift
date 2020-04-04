@@ -88,11 +88,4 @@ extension RemoteAddAccountTests {
         checkMemoryLeak(for: sut, file: file, line: line)
         return (httpClientSpy, sut)
     }
-    
-    fileprivate func makeAddAccountModel(name:String = "any name"
-                                       , email:String = "any email"
-                                       , password:String = "any password"
-                                       , passwordConfirmation:String = "any password") -> AddAccountModel {
-        return AddAccountModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
-    }
 }
