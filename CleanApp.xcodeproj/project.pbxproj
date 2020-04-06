@@ -42,6 +42,7 @@
 		8E93833D243238710003803D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833C243238710003803D /* HttpError.swift */; };
 		8E938340243265140003803D /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833F243265140003803D /* ExtensionHelpers.swift */; };
 		8EF73BB3243924E20092A825 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A7A02433FC3D0050749E /* AccountModelFactory.swift */; };
+		8EF73BB4243AC6770092A825 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A7992433FA460050749E /* TestExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -856,6 +857,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF73BB3243924E20092A825 /* AccountModelFactory.swift in Sources */,
+				8EF73BB4243AC6770092A825 /* TestExtension.swift in Sources */,
 				8E18A7F4243779250050749E /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
