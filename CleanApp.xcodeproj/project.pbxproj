@@ -45,6 +45,7 @@
 		8EF73BB4243AC6770092A825 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A7992433FA460050749E /* TestExtension.swift */; };
 		8EF73BB6243BE9EE0092A825 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BB5243BE9EE0092A825 /* LoadingView.swift */; };
 		8EF73BB9243BF3D40092A825 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BB8243BF3D40092A825 /* SignUpViewModel.swift */; };
+		8EF73BBB243BF7140092A825 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BBA243BF7140092A825 /* SignUpMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		8E93833F243265140003803D /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		8EF73BB5243BE9EE0092A825 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8EF73BB8243BF3D40092A825 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		8EF73BBA243BF7140092A825 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,6 +510,7 @@
 			children = (
 				8E18A7FD2437B58B0050749E /* SignUpPresenter.swift */,
 				8EF73BB8243BF3D40092A825 /* SignUpViewModel.swift */,
+				8EF73BBA243BF7140092A825 /* SignUpMapper.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -863,6 +866,7 @@
 				8E18A7FE2437B58B0050749E /* SignUpPresenter.swift in Sources */,
 				8EF73BB6243BE9EE0092A825 /* LoadingView.swift in Sources */,
 				8EF73BB9243BF3D40092A825 /* SignUpViewModel.swift in Sources */,
+				8EF73BBB243BF7140092A825 /* SignUpMapper.swift in Sources */,
 				8E18A8062437B6480050749E /* AlertView.swift in Sources */,
 				8E18A80B2437BC250050749E /* EmailValidator.swift in Sources */,
 			);
