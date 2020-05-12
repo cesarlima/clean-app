@@ -18,8 +18,37 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="iEL-5q-b8b">
                                 <rect key="frame" x="197" y="443" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YzF-8s-U4l">
+                                <rect key="frame" x="184" y="537" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMb-7H-WWS">
+                                <rect key="frame" x="159" y="172" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-fK-4rL">
+                                <rect key="frame" x="159" y="220" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-wg-2dk">
+                                <rect key="frame" x="159" y="269" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-BG-3z1">
+                                <rect key="frame" x="159" y="130" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iEL-5q-b8b" firstAttribute="centerX" secondItem="gR4-w5-6ct" secondAttribute="centerX" id="j9q-IH-lMl"/>
                             <constraint firstItem="iEL-5q-b8b" firstAttribute="centerY" secondItem="gR4-w5-6ct" secondAttribute="centerY" id="n1d-RL-kn7"/>
@@ -27,7 +56,12 @@
                         <viewLayoutGuide key="safeArea" id="gR4-w5-6ct"/>
                     </view>
                     <connections>
+                        <outlet property="btnSave" destination="YzF-8s-U4l" id="jqK-wg-hfP"/>
+                        <outlet property="emailTextField" destination="BMb-7H-WWS" id="cBV-Rc-PHh"/>
                         <outlet property="loadingIndicator" destination="iEL-5q-b8b" id="zio-i3-Dou"/>
+                        <outlet property="nameTextField" destination="zg5-BG-3z1" id="YuG-1n-LES"/>
+                        <outlet property="passwordConfirmationTextField" destination="NNc-wg-2dk" id="OVj-fh-jUG"/>
+                        <outlet property="passwordTextField" destination="W1F-fK-4rL" id="JAm-31-DlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVD-5x-reT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
