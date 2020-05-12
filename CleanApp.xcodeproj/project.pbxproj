@@ -425,6 +425,23 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		8E20B02B246A3A6A00638E78 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8EF50DF22469A07C000C4EBD /* SignUpViewController.swift */,
+				8E20B0272469D96D00638E78 /* SignUp.storyboard */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8E20B02C246A3A7900638E78 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8EF50DE824699C9D000C4EBD /* SignUpViewControllerTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		8E88C125242FC434008C2908 = {
 			isa = PBXGroup;
 			children = (
@@ -561,9 +578,8 @@
 		8EF50DDC24699C9C000C4EBD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8E20B02B246A3A6A00638E78 /* SignUp */,
 				8EF50DDE24699C9C000C4EBD /* Info.plist */,
-				8EF50DF22469A07C000C4EBD /* SignUpViewController.swift */,
-				8E20B0272469D96D00638E78 /* SignUp.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -571,7 +587,7 @@
 		8EF50DE724699C9D000C4EBD /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				8EF50DE824699C9D000C4EBD /* SignUpViewControllerTests.swift */,
+				8E20B02C246A3A7900638E78 /* SignUp */,
 				8EF50DEA24699C9D000C4EBD /* Info.plist */,
 			);
 			path = UITests;
