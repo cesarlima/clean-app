@@ -11,8 +11,7 @@ import Presentation
 
 final class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnSave: LoadingButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -37,9 +36,9 @@ final class SignUpViewController: UIViewController {
 extension SignUpViewController: LoadingView {
     func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
-            self.loadingIndicator.startAnimating()
+            self.btnSave.showLoading()
         } else {
-            self.loadingIndicator.stopAnimating()
+            self.btnSave.hideLoading()
         }
     }
 }

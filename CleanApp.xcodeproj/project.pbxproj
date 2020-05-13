@@ -32,6 +32,7 @@
 		8E20B0282469D96D00638E78 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E20B0272469D96D00638E78 /* SignUp.storyboard */; };
 		8E20B02A246A384500638E78 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E18A7E6243779250050749E /* Presentation.framework */; };
 		8E20B02F246A3B0400638E78 /* TestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20B02E246A3B0400638E78 /* TestsExtensions.swift */; };
+		8E20B032246B88CC00638E78 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E20B031246B88CC00638E78 /* LoadingButton.swift */; };
 		8E88C148242FC652008C2908 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C147242FC652008C2908 /* AddAccount.swift */; };
 		8E88C14A242FC755008C2908 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88C149242FC755008C2908 /* AccountModel.swift */; };
 		8E88C159242FC7EF008C2908 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88C150242FC7EF008C2908 /* Data.framework */; };
@@ -193,6 +194,7 @@
 		8E18A80A2437BC250050749E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		8E20B0272469D96D00638E78 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		8E20B02E246A3B0400638E78 /* TestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsExtensions.swift; sourceTree = "<group>"; };
+		8E20B031246B88CC00638E78 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		8E88C13F242FC502008C2908 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88C142242FC502008C2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E88C147242FC652008C2908 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -452,6 +454,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8E20B030246B88AA00638E78 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8E20B031246B88CC00638E78 /* LoadingButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		8E88C125242FC434008C2908 = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				8E20B02B246A3A6A00638E78 /* SignUp */,
+				8E20B030246B88AA00638E78 /* Components */,
 				8EF50DDE24699C9C000C4EBD /* Info.plist */,
 			);
 			path = UI;
@@ -1132,6 +1143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E20B032246B88CC00638E78 /* LoadingButton.swift in Sources */,
 				8EF50DF32469A07C000C4EBD /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
