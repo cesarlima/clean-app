@@ -36,8 +36,10 @@ final class SignUpViewController: UIViewController {
 extension SignUpViewController: LoadingView {
     func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
+            self.view.isUserInteractionEnabled = false
             self.btnSave.showLoading()
         } else {
+            self.view.isUserInteractionEnabled = true
             self.btnSave.hideLoading()
         }
     }
