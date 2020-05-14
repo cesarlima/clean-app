@@ -59,6 +59,7 @@
 		8EF73BC7243BF98E0092A825 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BC6243BF98E0092A825 /* LoadingViewSpy.swift */; };
 		8EF73BCA243BFAAF0092A825 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BC9243BFAAF0092A825 /* TestFactories.swift */; };
 		8EFF90E7246E0267004E4B8C /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF90E6246E0267004E4B8C /* UIViewControllerExtensions.swift */; };
+		8EFF90E9246E0541004E4B8C /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF90E8246E0541004E4B8C /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 		8EF73BC6243BF98E0092A825 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
 		8EF73BC9243BFAAF0092A825 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
 		8EFF90E6246E0267004E4B8C /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		8EFF90E8246E0541004E4B8C /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -673,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				8EFF90E6246E0267004E4B8C /* UIViewControllerExtensions.swift */,
+				8EFF90E8246E0541004E4B8C /* Storyboarded.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				8E20B032246B88CC00638E78 /* LoadingButton.swift in Sources */,
 				8EFF90E7246E0267004E4B8C /* UIViewControllerExtensions.swift in Sources */,
 				8EF50DF32469A07C000C4EBD /* SignUpViewController.swift in Sources */,
+				8EFF90E9246E0541004E4B8C /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

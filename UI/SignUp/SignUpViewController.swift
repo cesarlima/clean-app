@@ -9,7 +9,7 @@
 import UIKit
 import Presentation
 
-final class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var btnSave: LoadingButton!
     @IBOutlet weak var nameTextField: UITextField!
