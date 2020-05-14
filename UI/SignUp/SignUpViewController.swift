@@ -26,6 +26,7 @@ final class SignUpViewController: UIViewController {
     
     private func configure() {
         btnSave.addTarget(self, action: #selector(btnSaveTaped), for: .touchUpInside)
+        configureHideKeyboardOnTap()
     }
     
     @objc private func btnSaveTaped() {
