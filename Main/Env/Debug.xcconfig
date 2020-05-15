@@ -1,0 +1,12 @@
+//
+//  Debug.xcconfig
+//  CleanApp
+//
+//  Created by MacPro on 15/05/20.
+//  Copyright © 2020 br.com.cesarlima. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_BASE_URL = https:/$()/clean-node-api.herokuapp.com/api

@@ -45,6 +45,7 @@
 		8E93833B243233080003803D /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833A243233080003803D /* DomainError.swift */; };
 		8E93833D243238710003803D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833C243238710003803D /* HttpError.swift */; };
 		8E938340243265140003803D /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833F243265140003803D /* ExtensionHelpers.swift */; };
+		8EC06EC4246F5D1100041575 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC06EC3246F5D1100041575 /* Environment.swift */; };
 		8EF50DE424699C9D000C4EBD /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF50DDB24699C9C000C4EBD /* UI.framework */; };
 		8EF50DE924699C9D000C4EBD /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF50DE824699C9D000C4EBD /* SignUpViewControllerTests.swift */; };
 		8EF50DF32469A07C000C4EBD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF50DF22469A07C000C4EBD /* SignUpViewController.swift */; };
@@ -329,6 +330,9 @@
 		8E93833A243233080003803D /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		8E93833C243238710003803D /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		8E93833F243265140003803D /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
+		8EC06EC1246F590800041575 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		8EC06EC2246F5CE300041575 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		8EC06EC3246F5D1100041575 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		8EF50DDB24699C9C000C4EBD /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF50DDE24699C9C000C4EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF50DE324699C9D000C4EBD /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -778,6 +782,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8EC06EC0246F58E000041575 /* Env */ = {
+			isa = PBXGroup;
+			children = (
+				8EC06EC3246F5D1100041575 /* Environment.swift */,
+				8EC06EC1246F590800041575 /* Debug.xcconfig */,
+				8EC06EC2246F5CE300041575 /* Release.xcconfig */,
+			);
+			path = Env;
+			sourceTree = "<group>";
+		};
 		8EF50DDC24699C9C000C4EBD /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,6 +894,7 @@
 		8EFF9112246E1456004E4B8C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8EC06EC0246F58E000041575 /* Env */,
 				8EFF9150246E2653004E4B8C /* Composers */,
 				8EFF914F246E2607004E4B8C /* Proxies */,
 				8EFF914C246E1775004E4B8C /* Factories */,
@@ -1575,6 +1590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EFF9114246E1456004E4B8C /* AppDelegate.swift in Sources */,
+				8EC06EC4246F5D1100041575 /* Environment.swift in Sources */,
 				8EFF9152246E26ED004E4B8C /* SignUpComposer.swift in Sources */,
 				8EFF9154246E2774004E4B8C /* UseCaseFactory.swift in Sources */,
 				8EFF915A246E2D29004E4B8C /* WeakVarProxy.swift in Sources */,
@@ -2430,6 +2446,7 @@
 		};
 		8EFF912E246E1459004E4B8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC06EC1246F590800041575 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -2448,6 +2465,7 @@
 		};
 		8EFF912F246E1459004E4B8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC06EC2246F5CE300041575 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
