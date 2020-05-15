@@ -81,7 +81,9 @@
 		8EFF9144246E159B004E4B8C /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF50DDB24699C9C000C4EBD /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8EFF9147246E159B004E4B8C /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFF90EF246E0BF5004E4B8C /* Validation.framework */; };
 		8EFF9148246E159B004E4B8C /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFF90EF246E0BF5004E4B8C /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8EFF914E246E178E004E4B8C /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF914D246E178E004E4B8C /* SignUpFactory.swift */; };
+		8EFF914E246E178E004E4B8C /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF914D246E178E004E4B8C /* ControllerFactory.swift */; };
+		8EFF9152246E26ED004E4B8C /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF9151246E26ED004E4B8C /* SignUpComposer.swift */; };
+		8EFF9154246E2774004E4B8C /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF9153246E2774004E4B8C /* UseCaseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,7 +356,9 @@
 		8EFF9121246E1459004E4B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFF9126246E1459004E4B8C /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFF912C246E1459004E4B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8EFF914D246E178E004E4B8C /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactory.swift; sourceTree = "<group>"; };
+		8EFF914D246E178E004E4B8C /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		8EFF9151246E26ED004E4B8C /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
+		8EFF9153246E2774004E4B8C /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -872,6 +876,8 @@
 		8EFF9112246E1456004E4B8C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8EFF9150246E2653004E4B8C /* Composers */,
+				8EFF914F246E2607004E4B8C /* Proxies */,
 				8EFF914C246E1775004E4B8C /* Factories */,
 				8EFF9113246E1456004E4B8C /* AppDelegate.swift */,
 				8EFF9115246E1456004E4B8C /* SceneDelegate.swift */,
@@ -893,9 +899,25 @@
 		8EFF914C246E1775004E4B8C /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				8EFF914D246E178E004E4B8C /* SignUpFactory.swift */,
+				8EFF914D246E178E004E4B8C /* ControllerFactory.swift */,
+				8EFF9153246E2774004E4B8C /* UseCaseFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		8EFF914F246E2607004E4B8C /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Proxies;
+			sourceTree = "<group>";
+		};
+		8EFF9150246E2653004E4B8C /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				8EFF9151246E26ED004E4B8C /* SignUpComposer.swift */,
+			);
+			path = Composers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1547,7 +1569,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EFF9114246E1456004E4B8C /* AppDelegate.swift in Sources */,
-				8EFF914E246E178E004E4B8C /* SignUpFactory.swift in Sources */,
+				8EFF9152246E26ED004E4B8C /* SignUpComposer.swift in Sources */,
+				8EFF914E246E178E004E4B8C /* ControllerFactory.swift in Sources */,
+				8EFF9154246E2774004E4B8C /* UseCaseFactory.swift in Sources */,
 				8EFF9116246E1456004E4B8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
