@@ -84,6 +84,10 @@
 		8EFF914E246E178E004E4B8C /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF914D246E178E004E4B8C /* ControllerFactory.swift */; };
 		8EFF9152246E26ED004E4B8C /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF9151246E26ED004E4B8C /* SignUpComposer.swift */; };
 		8EFF9154246E2774004E4B8C /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF9153246E2774004E4B8C /* UseCaseFactory.swift */; };
+		8EFF9156246E2987004E4B8C /* SignUpIntegrationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF9155246E2987004E4B8C /* SignUpIntegrationsTests.swift */; };
+		8EFF9157246E29F2004E4B8C /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BC4243BF95A0092A825 /* AddAccountSpy.swift */; };
+		8EFF9158246E2A57004E4B8C /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A7992433FA460050749E /* TestExtension.swift */; };
+		8EFF915A246E2D29004E4B8C /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF9159246E2D29004E4B8C /* WeakVarProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,6 +363,8 @@
 		8EFF914D246E178E004E4B8C /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		8EFF9151246E26ED004E4B8C /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		8EFF9153246E2774004E4B8C /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		8EFF9155246E2987004E4B8C /* SignUpIntegrationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationsTests.swift; sourceTree = "<group>"; };
+		8EFF9159246E2D29004E4B8C /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -891,6 +897,7 @@
 		8EFF9129246E1459004E4B8C /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
+				8EFF9155246E2987004E4B8C /* SignUpIntegrationsTests.swift */,
 				8EFF912C246E1459004E4B8C /* Info.plist */,
 			);
 			path = MainTests;
@@ -908,6 +915,7 @@
 		8EFF914F246E2607004E4B8C /* Proxies */ = {
 			isa = PBXGroup;
 			children = (
+				8EFF9159246E2D29004E4B8C /* WeakVarProxy.swift */,
 			);
 			path = Proxies;
 			sourceTree = "<group>";
@@ -1296,6 +1304,7 @@
 					};
 					8EFF9125246E1459004E4B8C = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 						TestTargetID = 8EFF9110246E1456004E4B8C;
 					};
 				};
@@ -1572,6 +1581,7 @@
 				8EFF9152246E26ED004E4B8C /* SignUpComposer.swift in Sources */,
 				8EFF914E246E178E004E4B8C /* ControllerFactory.swift in Sources */,
 				8EFF9154246E2774004E4B8C /* UseCaseFactory.swift in Sources */,
+				8EFF915A246E2D29004E4B8C /* WeakVarProxy.swift in Sources */,
 				8EFF9116246E1456004E4B8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1580,6 +1590,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFF9157246E29F2004E4B8C /* AddAccountSpy.swift in Sources */,
+				8EFF9158246E2A57004E4B8C /* TestExtension.swift in Sources */,
+				8EFF9156246E2987004E4B8C /* SignUpIntegrationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2460,6 +2473,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6L4Z69F44;
 				INFOPLIST_FILE = MainTests/Info.plist;
@@ -2471,6 +2485,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cesarlima.MainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Main.app/Main";
@@ -2482,6 +2497,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6L4Z69F44;
 				INFOPLIST_FILE = MainTests/Info.plist;
