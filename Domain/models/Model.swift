@@ -14,4 +14,9 @@ extension Model {
     public func toData() -> Data? {
         return try? JSONEncoder().encode(self)
     }
+    
+    public func toJson() -> [String: Any]? {
+        guard let data = toData() else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+    }
 }

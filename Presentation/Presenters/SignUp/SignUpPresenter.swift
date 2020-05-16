@@ -12,18 +12,18 @@ import Domain
 public final class SignUpPresenter {
     private let alertView:AlertView
     private let loadingView:LoadingView
-    private let emailValidator:EmailValidator
     private let addAccount:AddAccount
+    private let validation:Validation
     
-    public init(alertView:AlertView, emailValidator:EmailValidator, addAccount:AddAccount, loadingView:LoadingView) {
+    public init(alertView:AlertView, addAccount:AddAccount, loadingView:LoadingView, validation:Validation) {
         self.alertView = alertView
-        self.emailValidator = emailValidator
         self.addAccount = addAccount
         self.loadingView = loadingView
+        self.validation = validation
     }
     
     public func signUp(viewModel:SignUpViewModel) {
-        if let message = validate(viewModel: viewModel) {
+        if let message = validation.validate(data: viewModel.toJson()) {
             self.alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
             let addAccountModel = SignUpMapper.toAddAccountModel(viewModel: viewModel)
@@ -39,23 +39,5 @@ public final class SignUpPresenter {
                 self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
             }
         }
-    }
-    
-    private func validate(viewModel:SignUpViewModel) -> String? {
-        if viewModel.name == nil || viewModel.name!.isEmpty {
-            return "O campo Nome é obrigatório"
-        } else if viewModel.email == nil || viewModel.email!.isEmpty {
-            return "O campo Email é obrigatório"
-        } else if viewModel.password == nil || viewModel.password!.isEmpty {
-            return "O campo Senha é obrigatório"
-        } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
-            return "O campo Confirmar Senha é obrigatório"
-        } else if viewModel.password! != viewModel.passwordConfirmation! {
-            return "O campo Confirmar Senha é inválido"
-        } else if self.emailValidator.isValid(email: viewModel.email!) == false {
-            return "O campo Email é inválido"
-        }
-        
-        return nil
     }
 }
