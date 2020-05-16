@@ -20,6 +20,6 @@ final class UseCaseFactory {
     }
     
     static func makeRemoteAddAccout() -> AddAccount {
-        return RemoteAddAccount(url: makeURL(path: "signup"), httpClient: httpClient)
+        return  MainQueueDispatchDecorator(RemoteAddAccount(url: makeURL(path: "signup"), httpClient: httpClient))
     }
 }
