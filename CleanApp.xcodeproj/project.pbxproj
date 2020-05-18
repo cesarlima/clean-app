@@ -44,6 +44,7 @@
 		8E93833B243233080003803D /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833A243233080003803D /* DomainError.swift */; };
 		8E93833D243238710003803D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833C243238710003803D /* HttpError.swift */; };
 		8E938340243265140003803D /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833F243265140003803D /* ExtensionHelpers.swift */; };
+		8EA1274F2473114E006DFB4E /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1274E2473114E006DFB4E /* Authentication.swift */; };
 		8EC06EC4246F5D1100041575 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC06EC3246F5D1100041575 /* Environment.swift */; };
 		8EC06EC7246F6D4300041575 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC06EC6246F6D4300041575 /* MainQueueDispatchDecorator.swift */; };
 		8EC06EC8246F71F100041575 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF73BC9243BFAAF0092A825 /* TestFactories.swift */; };
@@ -357,6 +358,7 @@
 		8E93833A243233080003803D /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		8E93833C243238710003803D /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		8E93833F243265140003803D /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
+		8EA1274E2473114E006DFB4E /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		8EC06EC1246F590800041575 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		8EC06EC2246F5CE300041575 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		8EC06EC3246F5D1100041575 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				8E88C147242FC652008C2908 /* AddAccount.swift */,
+				8EA1274E2473114E006DFB4E /* Authentication.swift */,
 			);
 			path = useCases;
 			sourceTree = "<group>";
@@ -1633,6 +1636,7 @@
 				8E88C16E24301A7A008C2908 /* Model.swift in Sources */,
 				8E88C148242FC652008C2908 /* AddAccount.swift in Sources */,
 				8E93833B243233080003803D /* DomainError.swift in Sources */,
+				8EA1274F2473114E006DFB4E /* Authentication.swift in Sources */,
 				8E88C14A242FC755008C2908 /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
