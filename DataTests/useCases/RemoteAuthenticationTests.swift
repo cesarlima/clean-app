@@ -49,6 +49,13 @@ class RemoteAuthenticationTests: XCTestCase {
         })
     }
     
+    func test_add_should_complete_with_account_if_client_complete_with_ivalid_data() {
+        let (httpClientSpy, sut) = makeSUT()
+        expect(sut, completeWith: .failure(.unexpected), when: {
+            httpClientSpy.completionWithData(makeInvalidData())
+        })
+    }
+    
     func test_add_should_not_complete_if_sut_has_been_deallocated() {
           let httpClientSpy = HttpClientSpy()
           var sut:RemoteAuthentication? = RemoteAuthentication(url: makeURL(), httpClient: httpClientSpy)
