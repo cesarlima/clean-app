@@ -40,7 +40,7 @@ class ValidationCompositeTests: XCTestCase {
         let sut = makeSUT(validations: [validationSpy])
         let data = ["name": "Cesar"]
         _ = sut.validate(data: data)
-        XCTAssertTrue(NSDictionary(dictionary: data).isEqual(to: validationSpy.data))
+        XCTAssertTrue(NSDictionary(dictionary: data).isEqual(to: validationSpy.data!))
     }
 }
 

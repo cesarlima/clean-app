@@ -29,7 +29,11 @@ public class RemoteAddAccount: AddAccount {
                     } else {
                         completion(.failure(.unexpected))
                     }
-                case .failure:completion(.failure(.unexpected))
+                
+                case .failure(let error):
+                    debugPrint("====================================")
+                    debugPrint(error)
+                    completion(.failure(.unexpected))
             }
         }
     }
