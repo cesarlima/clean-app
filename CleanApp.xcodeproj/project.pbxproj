@@ -44,9 +44,10 @@
 		8E93833B243233080003803D /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833A243233080003803D /* DomainError.swift */; };
 		8E93833D243238710003803D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833C243238710003803D /* HttpError.swift */; };
 		8E938340243265140003803D /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93833F243265140003803D /* ExtensionHelpers.swift */; };
-		8E9D5F0824732ED700016BDE /* makeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5F0724732ED700016BDE /* makeLoginViewModel.swift */; };
-		8E9D5F0B24732F9300016BDE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5F0A24732F9300016BDE /* LoginViewModel.swift */; };
+		8E9D5F0824732ED700016BDE /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5F0724732ED700016BDE /* LoginPresenterTests.swift */; };
+		8E9D5F0B24732F9300016BDE /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5F0A24732F9300016BDE /* LoginRequest.swift */; };
 		8E9D5F0D247331E800016BDE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5F0C247331E800016BDE /* LoginPresenter.swift */; };
+		8E9D5F0F24749C5400016BDE /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D5F0E24749C5400016BDE /* AuthenticationSpy.swift */; };
 		8EA1274F2473114E006DFB4E /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1274E2473114E006DFB4E /* Authentication.swift */; };
 		8EA12751247311FE006DFB4E /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA12750247311FE006DFB4E /* RemoteAuthenticationTests.swift */; };
 		8EA12753247313E2006DFB4E /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA12752247313E2006DFB4E /* RemoteAuthentication.swift */; };
@@ -363,9 +364,10 @@
 		8E93833A243233080003803D /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		8E93833C243238710003803D /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		8E93833F243265140003803D /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
-		8E9D5F0724732ED700016BDE /* makeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeLoginViewModel.swift; sourceTree = "<group>"; };
-		8E9D5F0A24732F9300016BDE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8E9D5F0724732ED700016BDE /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		8E9D5F0A24732F9300016BDE /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		8E9D5F0C247331E800016BDE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8E9D5F0E24749C5400016BDE /* AuthenticationSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		8EA1274E2473114E006DFB4E /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		8EA12750247311FE006DFB4E /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
 		8EA12752247313E2006DFB4E /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
@@ -844,7 +846,7 @@
 		8E9D5F0624732EB400016BDE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8E9D5F0724732ED700016BDE /* makeLoginViewModel.swift */,
+				8E9D5F0724732ED700016BDE /* LoginPresenterTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -853,7 +855,7 @@
 			isa = PBXGroup;
 			children = (
 				8E9D5F0C247331E800016BDE /* LoginPresenter.swift */,
-				8E9D5F0A24732F9300016BDE /* LoginViewModel.swift */,
+				8E9D5F0A24732F9300016BDE /* LoginRequest.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -991,6 +993,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF73BC4243BF95A0092A825 /* AddAccountSpy.swift */,
+				8E9D5F0E24749C5400016BDE /* AuthenticationSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1643,7 +1646,7 @@
 				8EF73BBB243BF7140092A825 /* SignUpMapper.swift in Sources */,
 				8E18A8062437B6480050749E /* AlertView.swift in Sources */,
 				8EC06ECB246F866300041575 /* Validation.swift in Sources */,
-				8E9D5F0B24732F9300016BDE /* LoginViewModel.swift in Sources */,
+				8E9D5F0B24732F9300016BDE /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,13 +1655,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF73BC7243BF98E0092A825 /* LoadingViewSpy.swift in Sources */,
-				8E9D5F0824732ED700016BDE /* makeLoginViewModel.swift in Sources */,
+				8E9D5F0824732ED700016BDE /* LoginPresenterTests.swift in Sources */,
 				8EF73BC5243BF95A0092A825 /* AddAccountSpy.swift in Sources */,
 				8EF73BBF243BF8B20092A825 /* AlertViewSpy.swift in Sources */,
 				8EF73BB3243924E20092A825 /* AccountModelFactory.swift in Sources */,
 				8EF73BB4243AC6770092A825 /* TestExtension.swift in Sources */,
 				8EC06ECF246F870300041575 /* ValidationSpy.swift in Sources */,
 				8EF73BCA243BFAAF0092A825 /* TestFactories.swift in Sources */,
+				8E9D5F0F24749C5400016BDE /* AuthenticationSpy.swift in Sources */,
 				8E18A7F4243779250050749E /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
